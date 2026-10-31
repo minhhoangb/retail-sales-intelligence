@@ -1,0 +1,394 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"ProjectRoot\",\"Sales\",\"Calendar\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "ProjectRoot",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"D:\\DHV301\\retail-sales-intelligence\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "ff823719-fc7d-4763-9061-bb3c2170565b"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "Sales_OrderDate_Calendar",
+        "fromColumn": "Order Date",
+        "fromTable": "Sales",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Sales",
+        "columns": [
+          {
+            "name": "Row ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "5bc8e20f-9297-4b0e-b04e-94822b68c9a7",
+            "sourceColumn": "Row ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Order ID",
+            "dataType": "string",
+            "lineageTag": "79cfc498-7b7b-4b51-80fa-0b87f8cc8864",
+            "sourceColumn": "Order ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Order Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "81a431be-d87b-4ec2-ac57-e9f65a2cc442",
+            "sourceColumn": "Order Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ship Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "isHidden": true,
+            "lineageTag": "04ec5e67-3505-406d-924a-b886a6a41cae",
+            "sourceColumn": "Ship Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ship Mode",
+            "dataType": "string",
+            "lineageTag": "34d19906-95f2-4a2b-9bab-06e11dc2823f",
+            "sourceColumn": "Ship Mode",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Customer ID",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "a2ff7d47-0762-4d7e-9ce0-ebe90f4164fa",
+            "sourceColumn": "Customer ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Customer Name",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "6f2c8ffc-7d92-4f32-ba88-5fb29b18148e",
+            "sourceColumn": "Customer Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Segment",
+            "dataType": "string",
+            "lineageTag": "f7f1c9c2-c3bf-44f7-a3f2-bc401a67d9da",
+            "sourceColumn": "Segment",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "b90b28d3-eb97-4e1d-ab5b-3577a74a90b5",
+            "sourceColumn": "Country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "7fe2e863-ed5a-416a-9bf6-d4985175f71f",
+            "sourceColumn": "City",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "lineageTag": "fbe3a186-c73b-4fb2-94e6-54b710a6cb53",
+            "sourceColumn": "State",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Postal Code",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "46d6d35c-895d-478e-a290-e6aa87b06550",
+            "sourceColumn": "Postal Code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "lineageTag": "ffa63374-928b-441b-a5b7-cccd29934228",
+            "sourceColumn": "Region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product ID",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "1acec06f-1662-4a12-ad5f-c3946d49b099",
+            "sourceColumn": "Product ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "lineageTag": "b114fcea-2ce6-4670-9a4a-9f05d2088a8a",
+            "sourceColumn": "Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sub-Category",
+            "dataType": "string",
+            "lineageTag": "9201aded-1fa2-47fc-bb07-62a8ec7e4953",
+            "sourceColumn": "Sub-Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product Name",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "70936fb5-8a0e-4c7b-a844-88490f7e2907",
+            "sourceColumn": "Product Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Sales",
+            "dataType": "double",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "lineageTag": "ff11c759-fd40-447b-b2ae-4836e04c9c0c",
+            "sourceColumn": "Sales",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "lineageTag": "c48ca94d-be51-44b4-8b72-58d8803079e2",
+            "sourceColumn": "Quantity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Discount",
+            "dataType": "double",
+            "formatString": "0.00%;(0.00%);0.00%",
+            "lineageTag": "a9d66988-d058-4a7b-b843-1fd974a426d9",
+            "sourceColumn": "Discount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Profit",
+            "dataType": "double",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "lineageTag": "2db6d8bf-0b8d-4880-8972-2679cd3c87fa",
+            "sourceColumn": "Profit",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "71f6f819-0ee9-435d-945a-3871714497ff",
+        "measures": [
+          {
+            "name": "Total Sales",
+            "description": "Tổng doanh thu trong ngữ cảnh lọc hiện tại.",
+            "displayFolder": "KPI",
+            "expression": "SUM ( Sales[Sales] )",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "lineageTag": "21630127-7166-4ba7-a390-0f6ca668ea87"
+          },
+          {
+            "name": "Total Profit",
+            "description": "Tổng lợi nhuận, giữ cả giao dịch lỗ.",
+            "displayFolder": "KPI",
+            "expression": "SUM ( Sales[Profit] )",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "lineageTag": "d0a0e832-2782-431b-bf05-fe103e244ca9"
+          },
+          {
+            "name": "Total Orders",
+            "description": "Số Order ID khác nhau trong ngữ cảnh lọc; một đơn có thể có nhiều mặt hàng.",
+            "displayFolder": "KPI",
+            "expression": "DISTINCTCOUNT ( Sales[Order ID] )",
+            "formatString": "#,0",
+            "lineageTag": "e8e44bf7-bbc5-4ba6-a4a5-53b39bf20d16"
+          },
+          {
+            "name": "Total Quantity",
+            "description": "Tổng số lượng sản phẩm bán ra.",
+            "displayFolder": "KPI",
+            "expression": "SUM ( Sales[Quantity] )",
+            "formatString": "#,0",
+            "lineageTag": "52ca512b-570b-4820-8f89-c29c9766c336"
+          },
+          {
+            "name": "Line Items",
+            "description": "Số dòng mặt hàng; không phải số đơn hàng.",
+            "displayFolder": "KPI",
+            "expression": "COUNTROWS ( Sales )",
+            "formatString": "#,0",
+            "lineageTag": "da403158-7817-42d1-93d5-556d2efddd89"
+          },
+          {
+            "name": "Profit Margin",
+            "description": "Biên lợi nhuận = tổng lợi nhuận / tổng doanh thu; không lấy trung bình biên theo dòng.",
+            "displayFolder": "KPI",
+            "expression": "DIVIDE ( [Total Profit], [Total Sales] )",
+            "formatString": "0.00%;(0.00%);0.00%",
+            "lineageTag": "5219f8cc-3ca0-4bc8-84df-f7861e77c9a8"
+          },
+          {
+            "name": "Average Order Value",
+            "description": "Doanh thu của các mặt hàng được lọc / số đơn chứa các mặt hàng đó; không tính toàn bộ giỏ hàng ngoài bộ lọc.",
+            "displayFolder": "KPI",
+            "expression": "DIVIDE ( [Total Sales], [Total Orders] )",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "lineageTag": "583272bc-acbf-48bc-9242-14e4d761e7f2"
+          },
+          {
+            "name": "Loss Lines",
+            "description": "Số dòng mặt hàng có lợi nhuận âm; trả 0 khi không có dòng lỗ.",
+            "displayFolder": "KPI",
+            "expression": "COALESCE ( COUNTROWS ( FILTER ( Sales, Sales[Profit] < 0 ) ), 0 )",
+            "formatString": "#,0",
+            "lineageTag": "eb3a4b3a-0038-49cc-a5df-e42bb7dea697"
+          },
+          {
+            "name": "Loss Line Rate",
+            "description": "Tỷ lệ dòng mặt hàng lỗ; không phải tỷ lệ đơn hàng lỗ.",
+            "displayFolder": "KPI",
+            "expression": "DIVIDE ( [Loss Lines], [Line Items] )",
+            "formatString": "0.00%;(0.00%);0.00%",
+            "lineageTag": "96d674f3-c385-4d37-bb2a-76cd6550faa5"
+          },
+          {
+            "name": "Sales Previous Year",
+            "description": "Doanh thu cùng kỳ năm trước; chỉ trả kết quả khi chọn đúng một năm hoặc một tháng. Trả BLANK khi thiếu lịch sử hoặc chọn nhiều năm.",
+            "displayFolder": "KPI",
+            "expression": "IF ( HASONEVALUE ( 'Calendar'[Year] ), CALCULATE ( [Total Sales], DATEADD ( 'Calendar'[Date], -1, YEAR ) ) )",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "lineageTag": "25272f06-6f9f-43d3-abaf-1bb60e3eec17"
+          },
+          {
+            "name": "Sales YoY %",
+            "description": "Tăng trưởng doanh thu cùng kỳ; BLANK khi kỳ hiện tại/kỳ trước thiếu dữ liệu hoặc mẫu số bằng 0.",
+            "displayFolder": "KPI",
+            "expression": "VAR PriorSales = [Sales Previous Year]\nVAR CurrentSales = [Total Sales]\nRETURN IF ( ISBLANK ( CurrentSales ) || ISBLANK ( PriorSales ), BLANK (), DIVIDE ( CurrentSales - PriorSales, PriorSales ) )",
+            "formatString": "0.00%;(0.00%);0.00%",
+            "lineageTag": "72539dca-43bf-41ed-8a45-8b752d17676f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sales",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(ProjectRoot & \"\\data_cleaned\\superstore_clean.csv\"), [Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Row ID\", Int64.Type}, {\"Order ID\", type text}, {\"Order Date\", type date}, {\"Ship Date\", type date}, {\"Ship Mode\", type text}, {\"Customer ID\", type text}, {\"Customer Name\", type text}, {\"Segment\", type text}, {\"Country\", type text}, {\"City\", type text}, {\"State\", type text}, {\"Postal Code\", type text}, {\"Region\", type text}, {\"Product ID\", type text}, {\"Category\", type text}, {\"Sub-Category\", type text}, {\"Product Name\", type text}, {\"Sales\", type number}, {\"Quantity\", Int64.Type}, {\"Discount\", type number}, {\"Profit\", type number}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Calendar",
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "isKey": true,
+            "lineageTag": "3926f3b3-c5f1-4907-9a86-adcbed373f63",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5a0b0c1a-b69c-47db-9cb5-a9ae62e78c9e",
+            "sourceColumn": "Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "lineageTag": "ab3154c9-35c6-4786-a0fd-4d13e2c08d41",
+            "sourceColumn": "Month",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "5f223246-136e-432d-b050-8ed867e39df8",
+        "partitions": [
+          {
+            "name": "Calendar",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Start = #date(2014, 1, 1),",
+                "    End = #date(2017, 12, 31),",
+                "    Dates = Table.FromList(List.Dates(Start, Duration.Days(End - Start) + 1, #duration(1,0,0,0)), Splitter.SplitByNothing(), {\"Date\"}),",
+                "    Typed = Table.TransformColumnTypes(Dates, {{\"Date\", type date}}),",
+                "    Year = Table.AddColumn(Typed, \"Year\", each Date.Year([Date]), Int64.Type),",
+                "    Month = Table.AddColumn(Year, \"Month\", each Date.ToText([Date], \"yyyy-MM\", \"en-US\"), type text)",
+                "in",
+                "    Month"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

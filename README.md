@@ -52,8 +52,8 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
   | **Q3** Khu vực & phân khúc | Khác nhau rõ về **quy mô**, gần như không khác về **AOV** (vùng 426–484 USD; phân khúc 449–472 USD). `Central` biên LN thấp nhất (7,92%); `Home Office` cao nhất (14,05%). |
   | **Q4** Mức giảm giá | **Không** liên hệ với doanh thu (r = −0,028). Liên hệ **phân tầng theo ngưỡng** với lợi nhuận: biên LN +29,51% ở mức 0% → âm từ **30%**; 6 mức 0,32–0,80 có **100% dòng lỗ**. r = −0,219 (R² ≈ 4,8%) — **mối liên hệ quan sát, không phải nhân quả**. |
 - **Hồi quy tuyến tính:** TODO (biến Y, biến X, MAE, RMSE, R² trên tập kiểm tra, so với mốc dự đoán trung bình) — *phần của Hiếu*
-- **KPI:** TODO (tóm tắt từ [`kpi_dax_notes.md`](docs/kpi_dax_notes.md)) — *phần của Hoàng*
-- **Dashboard:** TODO — *phần của Hoàng*
+- **KPI:** 11 measure; **66/66 kết quả DAX trên Power BI Desktop khớp phép tính độc lập trong 6 ngữ cảnh**. Toàn bộ: doanh thu **2.296.919,49 USD**, lợi nhuận **286.409,08 USD**, **5.009 đơn**, biên lợi nhuận **12,47%**, AOV **458,56 USD**. Xem [`kpi_dax_notes.md`](docs/kpi_dax_notes.md) và [`kpi_validation.csv`](docs/kpi_validation.csv).
+- **Dashboard:** đã có [project Power BI](pbix/RetailSales.pbip) gồm 3 trang cho câu hỏi 1–4, Calendar và nguồn CSV sạch; Refresh đã chạy trên Desktop. **Còn xuất PBIX, kiểm tra hiển thị cuối, ảnh chụp và kiểm tra thông điệp với thành viên khác**, chưa hoàn thành toàn bộ DoD. Cách mở và xuất ở [`pbix/README.md`](pbix/README.md).
 
 ### Tóm tắt quyết định làm sạch
 
@@ -77,6 +77,7 @@ Xem [`assumptions_limitations.md`](docs/assumptions_limitations.md) và [`privac
 |---|---|---|
 | Claude Code | Gợi ý dataset, tạo khung thư mục và file mẫu | Xem các gợi ý đã được chuyển thành phần Data Cleaning và EDA trong notebook 01 |
 | Cursor (AI Agent) | Hỗ trợ viết code Data Cleaning (D1–D8) và EDA (D9–D14), sinh notebook, kiểm chứng số liệu bằng script độc lập | Mọi con số trong báo cáo đều được **in ra từ dữ liệu** trong notebook; các điểm nghi ngờ (ví dụ ngưỡng giảm giá) đã được **kiểm chứng lại** bằng script độc lập trước khi ghi vào tài liệu |
+| Codex | Hỗ trợ tạo project Power BI, Power Query, 11 DAX measure, bố cục 3 trang và tài liệu KPI | Đã Refresh bằng Power BI Desktop; đối chiếu 66 kết quả DAX thật với phép tính CSV dùng Decimal, tất cả PASS; phần xem cuối và ảnh chụp còn chờ |
 
 ## Cấu trúc thư mục
 
