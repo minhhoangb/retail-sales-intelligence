@@ -37,7 +37,6 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
 | 1. Làm sạch và EDA | Notebook chính, dữ liệu sạch, data dictionary | [`01_data_preparation_eda.ipynb`](notebook/01_data_preparation_eda.ipynb), [`data_dictionary.md`](docs/data_dictionary.md) |
 | 2. Hồi quy tuyến tính | Mô hình, chỉ số đánh giá, diễn giải | [`02_linear_regression.ipynb`](notebook/02_linear_regression.ipynb) |
 | 3. Dashboard | File PBIX, ghi chú KPI/DAX, ảnh chụp | `pbix/`, [`kpi_dax_notes.md`](docs/kpi_dax_notes.md), `screenshots/` |
-| 4. Trình bày | Slide 7–10 trang | `slides/` |
 
 ## Kết quả
 
@@ -63,7 +62,6 @@ data_raw/          Dữ liệu gốc
 data_cleaned/      Dữ liệu đã làm sạch dùng cho hồi quy và dashboard
 notebook/          Notebook làm sạch, EDA và hồi quy tuyến tính
 pbix/              File Power BI
-slides/            Slide thuyết trình
 docs/              Data dictionary, KPI, giả định, quyền riêng tư, phân công
 screenshots/       Ảnh mô hình dữ liệu và dashboard
 milestones/        Bằng chứng từng mốc nếu giảng viên yêu cầu
