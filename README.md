@@ -6,9 +6,18 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
 
 ## Mục tiêu
 
-- **Đề tài:** TODO
-- **Người dùng:** TODO
-- **Câu hỏi phân tích (3–5 câu):** TODO
+- **Đề tài:** Retail / Sales Intelligence – phân tích hiệu quả bán hàng của Superstore giai đoạn 2014–2017, có sử dụng hồi quy tuyến tính.
+- **Người dùng:** Quản lý kinh doanh của doanh nghiệp bán lẻ.
+- **Phạm vi:** Dữ liệu bán hàng tại Hoa Kỳ từ 01/2014 đến 12/2017, xem theo thời gian, sản phẩm, khu vực và phân khúc khách hàng. Bài phân tích mô tả và tìm mối liên hệ; không dự báo tương lai và không kết luận quan hệ nhân quả.
+- **Tính khả thi:** Dataset có đủ cột thời gian, sản phẩm, khu vực, phân khúc, `Sales`, `Quantity`, `Discount`, `Profit` để trả lời cả 5 câu hỏi.
+
+**Câu hỏi phân tích**
+
+1. Doanh thu, lợi nhuận và số đơn hàng thay đổi thế nào theo tháng và năm?
+2. Nhóm sản phẩm nào hoạt động tốt nhất và kém nhất về doanh thu và lợi nhuận?
+3. Khu vực và phân khúc khách hàng khác nhau thế nào về doanh thu, lợi nhuận và giá trị đơn trung bình?
+4. Mức giảm giá có mối liên hệ thế nào với doanh thu và lợi nhuận?
+5. Mô hình hồi quy tuyến tính ước lượng kết quả bán hàng tốt đến đâu trên dữ liệu chưa dùng để huấn luyện, và những yếu tố nào có liên hệ rõ nhất?
 
 ## Dữ liệu nguồn
 
