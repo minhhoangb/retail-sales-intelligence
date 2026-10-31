@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# File tạm của Office và Power BI
+~$*
+*.tmp
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
