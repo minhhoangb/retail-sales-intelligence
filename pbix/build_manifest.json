@@ -1,0 +1,23 @@
+{
+  "clean_csv_sha256": "c4369518b088d54f0fb192e891f6c7d1b1d530721aa411df22f9f0754384973c",
+  "rows": 9993,
+  "orders": 5009,
+  "measures": [
+    "Total Sales",
+    "Total Profit",
+    "Total Orders",
+    "Total Quantity",
+    "Line Items",
+    "Profit Margin",
+    "Average Order Value",
+    "Loss Lines",
+    "Loss Line Rate",
+    "Sales Previous Year",
+    "Sales YoY %"
+  ],
+  "pages": [
+    "01  Tổng quan",
+    "02  Sản phẩm và thị trường",
+    "03  Giảm giá và lợi nhuận"
+  ]
+}
