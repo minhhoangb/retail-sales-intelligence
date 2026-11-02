@@ -2,7 +2,7 @@
 
 Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình: chuẩn bị dữ liệu → EDA → hồi quy tuyến tính → dashboard Power BI → báo cáo và thuyết trình.
 
-> **Trạng thái:** phần **Data Cleaning (D1–D8) + EDA (D9–D14)** đã hoàn thành và kiểm chứng. Các mục còn `TODO` thuộc phần hồi quy tuyến tính (Hiếu) và dashboard Power BI (Hoàng).
+> **Trạng thái:** phần **Data Cleaning (D1–D8) + EDA (D9–D14)** và **Hồi quy tuyến tính (M1–M10)** đã hoàn thành và kiểm chứng. Mục còn thực hiện là dashboard Power BI (Hoàng).
 
 ## Mục tiêu
 
@@ -35,7 +35,7 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
 | Bước | Sản phẩm | Vị trí |
 |---|---|---|
 | 1. Làm sạch và EDA | Notebook chính, dữ liệu sạch, data dictionary, báo cáo insight | [`01_data_cleaning_eda.ipynb`](notebooks/01_data_cleaning_eda.ipynb) (**D1–D14 xong**), [`data_dictionary.md`](docs/data_dictionary.md), [`eda_insights.md`](reports/eda_insights.md) |
-| 2. Hồi quy tuyến tính | Mô hình, chỉ số đánh giá, diễn giải | [`02_linear_regression.ipynb`](notebook/02_linear_regression.ipynb) — *đang chờ Hiếu* |
+| 2. Hồi quy tuyến tính | Mô hình, chỉ số đánh giá, diễn giải | [`02_linear_regression.ipynb`](notebook/02_linear_regression.ipynb) (**M1–M10 xong**) |
 | 3. Dashboard | File PBIX, ghi chú KPI/DAX, ảnh chụp | `pbix/`, [`kpi_dax_notes.md`](docs/kpi_dax_notes.md), `screenshots/` |
 
 ## Kết quả
@@ -51,7 +51,17 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
   | **Q2** Nhóm sản phẩm | Tốt nhất **`Technology`** (biên LN 17,40%); kém nhất **`Furniture`** — doanh thu chỉ kém 11% nhưng lợi nhuận kém 87%, biên LN **2,49%**, 33,6% dòng lỗ. |
   | **Q3** Khu vực & phân khúc | Khác nhau rõ về **quy mô**, gần như không khác về **AOV** (vùng 426–484 USD; phân khúc 449–472 USD). `Central` biên LN thấp nhất (7,92%); `Home Office` cao nhất (14,05%). |
   | **Q4** Mức giảm giá | **Không** liên hệ với doanh thu (r = −0,028). Liên hệ **phân tầng theo ngưỡng** với lợi nhuận: biên LN +29,51% ở mức 0% → âm từ **30%**; 6 mức 0,32–0,80 có **100% dòng lỗ**. r = −0,219 (R² ≈ 4,8%) — **mối liên hệ quan sát, không phải nhân quả**. |
-- **Hồi quy tuyến tính:** TODO (biến Y, biến X, MAE, RMSE, R² trên tập kiểm tra, so với mốc dự đoán trung bình) — *phần của Hiếu*
+- **Hồi quy tuyến tính (M1–M10):** ✅ xong. Notebook [`02_linear_regression.ipynb`](notebook/02_linear_regression.ipynb) chạy hoàn tất **0 lỗi**, gồm biểu đồ thực tế vs dự đoán, biểu đồ phần dư và bảng phân tích hệ số. Chi tiết tại [`Hieu_dhv.md`](Hieu_dhv.md) và [`assumptions_limitations.md`](docs/assumptions_limitations.md) (mục 5).
+  - **Biến Y:** `Sales` (Doanh thu mặt hàng).
+  - **Biến X:** `Quantity`, `Discount`, `Sub-Category`, `Region`, `Segment`, `Ship Mode`, `Order_Year`, `Order_Month` (mã hóa One-Hot trong Pipeline; loại bỏ `Profit`, mã định danh và chuỗi ngày thô).
+  - **Chia tập Train/Test:** `GroupShuffleSplit` theo `Order ID` (80:20, `random_state=42`) để chống rò rỉ dữ liệu khi một đơn có nhiều dòng (Train: 4.007 đơn / 7.958 dòng; Test: 1.002 đơn / 2.035 dòng; 0 đơn trùng lặp).
+  - **Kết quả đánh giá trên tập kiểm tra:**
+    - **Mô hình mốc (DummyRegressor - Mean):** $MAE = 273,26$ USD, $RMSE = 605,88$ USD, $R^2 = -0,0003$.
+    - **Hồi quy đơn biến (`Quantity`):** $MAE = 261,03$ USD, $RMSE = 591,28$ USD, $R^2 = 0,0473$.
+    - **Hồi quy đa biến (Pipeline OLS):** $MAE = 216,54$ USD (giảm 56,72 USD sai số so với mốc, tương đương giảm ~20,8%), $RMSE = 502,05$ USD, $R^2 = 0,3131$ (giải thích 31,31% phương sai).
+    - **Mở rộng Log-Sales (kiểm tra ngoại lai):** Mô hình với $\ln(1+Sales)$ cho $R^2_{\log} = 0,5701$, hạ sai số $MAE$ trên USD gốc xuống $165,31$ USD.
+  - **Yếu tố liên hệ rõ nhất:** Nhóm thiết bị kỹ thuật cao `Copiers` ($\beta \approx +2.035,40$ USD) và `Machines` ($\beta \approx +1.392,03$ USD) có liên hệ mạnh nhất tới doanh thu; `Discount` có liên hệ âm ($\beta \approx -303,48$ USD); `Quantity` có liên hệ dương ($\beta \approx +57,47$ USD/đơn vị). Vùng địa lý và phân khúc khách hàng có mức độ liên hệ rất thấp ($|\beta| < 50$ USD).
+  - **Kết luận câu hỏi 5:** Mô hình đa biến ước lượng kết quả bán hàng vượt trội hơn rõ rệt so với mô hình mốc dự đoán trung bình. Độ phù hợp $R^2 \approx 31,31\%$ phản ánh đúng bản chất dữ liệu bán lẻ thiếu thông tin giá niêm yết đơn vị (`Unit Price`); mô hình phù hợp để phân tích xu hướng và tương quan, không dùng để dự báo cá thể.
 - **KPI:** 11 measure; **66/66 kết quả DAX trên Power BI Desktop khớp phép tính độc lập trong 6 ngữ cảnh**. Toàn bộ: doanh thu **2.296.919,49 USD**, lợi nhuận **286.409,08 USD**, **5.009 đơn**, biên lợi nhuận **12,47%**, AOV **458,56 USD**. Xem [`kpi_dax_notes.md`](docs/kpi_dax_notes.md) và [`kpi_validation.csv`](docs/kpi_validation.csv).
 - **Dashboard:** đã có [project Power BI](pbix/RetailSales.pbip) gồm 3 trang cho câu hỏi 1–4, Calendar và nguồn CSV sạch; Refresh đã chạy trên Desktop. **Còn xuất PBIX, kiểm tra hiển thị cuối, ảnh chụp và kiểm tra thông điệp với thành viên khác**, chưa hoàn thành toàn bộ DoD. Cách mở và xuất ở [`pbix/README.md`](pbix/README.md).
 
