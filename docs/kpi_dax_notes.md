@@ -137,7 +137,7 @@ RETURN IF ( ISBLANK ( CurrentSales ) || ISBLANK ( PriorSales ), BLANK (), DIVIDE
 
 ## Kiểm tra trong các ngữ cảnh lọc
 
-Đã chạy 11 measure trên engine Analysis Services cục bộ của Power BI Desktop 2.159.883.0, sau Refresh từ CSV sạch. Kết quả: **66/66 PASS** trong 6 ngữ cảnh; kiểm tra riêng `DIVIDE(100, 0)` trả BLANK và `DIVIDE(0, 100)` trả 0 đều PASS.
+Ngày 03/11/2026, đã chạy lại 11 measure trên engine Analysis Services cục bộ của Power BI Desktop 2.159.1231.0, sau Refresh bằng TOM từ CSV sạch. Đã mở lại PBIX và kiểm chứng trên engine riêng của file nộp. Kết quả: **66/66 PASS** trong 6 ngữ cảnh; kiểm tra riêng `DIVIDE(100, 0)` trả BLANK và `DIVIDE(0, 100)` trả 0 đều PASS.
 
 - [Kết quả DAX thật](kpi_powerbi_actual.json)
 - [Bảng đối chiếu 66 kết quả, sai số và trạng thái](kpi_validation.csv)
@@ -180,21 +180,21 @@ Ba trang, mỗi trang 7 visual kể cả tiêu đề và 2 slicer: Tổng quan (
 
 ## Trạng thái DoD
 
-Chưa coi toàn bộ phần Dashboard là hoàn thành.
+Phần kỹ thuật Dashboard đã hoàn tất; còn bài kiểm tra thông điệp với một thành viên khác để xác nhận toàn bộ DoD.
 
 | Điều kiện | Trạng thái và bằng chứng |
 |---|---|
-| Nguồn sạch, Refresh không lỗi | Đạt trong PBIP đã mở bằng Power BI Desktop; **chưa xuất PBIX** |
+| Nguồn sạch, Refresh không lỗi | Đạt: đã Refresh PBIP, xuất RetailSales.pbix, mở lại và Refresh PBIX; 9.993 dòng, 5.009 đơn |
 | Ít nhất 5 measure, 2 measure vượt SUM/COUNT | Đạt: 11 measure, có AOV, Profit Margin, Loss Line Rate, Previous Year và YoY |
 | 5.009 đơn; tỷ lệ tính lại đúng theo bộ lọc | Đạt: DAX thật khớp phép tính CSV trong 6 ngữ cảnh |
 | Thiếu kỳ trước / mẫu số 0 | Đạt: 2014-01 và DIVIDE edge cases đã kiểm tra trên engine |
-| Tiêu đề, người dùng, KPI nổi bật, ít visual | Đã tạo 3 trang, mỗi trang 7 visual kể cả 2 slicer và tiêu đề; trang tổng quan đã mở và xem trước vòng chỉnh cỡ chữ cuối |
-| Màu sắc, nhãn, định dạng thống nhất | Đã thiết lập; cần xem lại cả 3 trang sau vòng chỉnh cuối |
+| Tiêu đề, người dùng, KPI nổi bật, ít visual | Đã xem cả 3 trang trong Desktop, mỗi trang 7 visual kể cả 2 slicer và tiêu đề; đã chọn/bỏ năm 2017, KPI và biểu đồ cập nhật đúng |
+| Màu sắc, nhãn, định dạng thống nhất | Đã xem lại cả 3 trang; tiêu đề và KPI hiển thị đầy đủ, bảng/biểu đồ có cuộn ở nơi đã ghi rõ |
 | Người khác nêu thông điệp trong 10 giây | Chưa thực hiện; cần một thành viên khác trong nhóm |
 | Mỗi measure có định nghĩa và ghi chú kiểm thử | Đạt: 11 định nghĩa/công thức và bảng đối chiếu ở trên |
-| Ảnh từ bản dùng dữ liệu sạch | Chưa chụp; không thay bằng ảnh mô phỏng |
+| Ảnh từ bản dùng dữ liệu sạch | Đạt: screenshots/01_overview.png, 02_products_regions.png, 03_discounts.png và 04_model.png, chụp trực tiếp từ Desktop dùng CSV sạch |
 
-Phần hồi quy thuộc Hiếu. Chưa đổi quyền riêng tư GitHub, tổng hợp khai báo AI của người khác hay xác nhận phần thuyết trình. Bảng phân công chi tiết vẫn ở ngoài repo theo yêu cầu; chưa điền bản nộp cuối.
+Phân công hiện có tại role_allocation.md. Chưa xác nhận bài kiểm tra thông điệp 10 giây, chạy trên máy thành viên khác, nhận bàn giao hay tập thuyết trình; những mục này cần nhóm xác nhận. Khai báo AI đã bổ sung phần Codex rà soát hồi quy, chưa tự xác nhận thay khai báo của từng thành viên.
 
 ## Tài liệu kỹ thuật
 

@@ -1,6 +1,6 @@
 # Dashboard Retail Sales Intelligence
 
-Mở `RetailSales.pbip` bằng Power BI Desktop. Project này có mô hình import, lịch Calendar và 3 trang dashboard; đã Refresh từ file sạch 9.993 dòng, 5.009 đơn. Nguồn project ở định dạng text để review bằng Git; đầu ra PBIX vẫn cần lưu từ Desktop.
+Mở `RetailSales.pbip` bằng Power BI Desktop. Project này có mô hình import, lịch Calendar và 3 trang dashboard; đã Refresh từ file sạch 9.993 dòng, 5.009 đơn. Nguồn project ở định dạng text để review bằng Git. Bản nộp [RetailSales.pbix](RetailSales.pbix) đã được lưu từ Desktop, mở lại và Refresh thành công; engine riêng của PBIX đạt 66/66 đối chiếu KPI. Xem [biên bản QA](../docs/final_qa.md).
 
 ## Mở trên máy khác
 
@@ -25,7 +25,7 @@ Script PowerShell chỉ đọc engine cục bộ và ghi kết quả vào docs; 
 1. Kiểm tra hiển thị cả 3 trang và thao tác slicer; xóa bộ lọc trước khi lưu bản tổng quan.
 2. File → Save as → Power BI Desktop (*.pbix), lưu `pbix/RetailSales.pbix`. Power BI Desktop hỗ trợ chuyển PBIP thành PBIX qua Save as; chưa có đường chuyển bằng lệnh được Microsoft hỗ trợ.
 3. Mở lại PBIX, Refresh, kiểm tra Total Orders 5.009.
-4. Chụp Model view và 3 trang vào screenshots/, từ chính bản dùng nguồn sạch. Chưa có ảnh chụp trong lần bàn giao này.
+4. Chụp Model view và 3 trang vào screenshots/, từ chính bản dùng nguồn sạch. Đã có 01_overview.png, 02_products_regions.png, 03_discounts.png và 04_model.png.
 5. Nhờ người khác trong nhóm nêu thông điệp chính sau khi xem 10 giây; chỉ đánh dấu DoD đầy đủ khi đã đạt bước này.
 
 Ba trang: Tổng quan (xu hướng doanh thu theo tháng, lợi nhuận và số đơn theo năm), Sản phẩm và thị trường (Category, Sub-Category, Region và Segment), Giảm giá và lợi nhuận (mối liên hệ quan sát; không kết luận nhân quả).

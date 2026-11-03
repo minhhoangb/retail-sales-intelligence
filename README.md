@@ -2,7 +2,7 @@
 
 Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình: chuẩn bị dữ liệu → EDA → hồi quy tuyến tính → dashboard Power BI → báo cáo và thuyết trình.
 
-> **Trạng thái:** phần **Data Cleaning (D1–D8) + EDA (D9–D14)** và **Hồi quy tuyến tính (M1–M10)** đã hoàn thành và kiểm chứng. Mục còn thực hiện là dashboard Power BI (Hoàng).
+> **Trạng thái:** phần **Data Cleaning (D1–D8) + EDA (D9–D14)** và **Hồi quy tuyến tính (M1–M10)** đã hoàn thành và kiểm chứng. Dashboard đã xuất PBIX, mở lại và Refresh thành công, có ảnh 3 trang và Model view. Còn xác nhận bàn giao/chạy trên máy thành viên khác, bài kiểm tra thông điệp 10 giây và tập thuyết trình cùng nhóm.
 
 ## Mục tiêu
 
@@ -59,11 +59,11 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
     - **Mô hình mốc (DummyRegressor - Mean):** $MAE = 273,26$ USD, $RMSE = 605,88$ USD, $R^2 = -0,0003$.
     - **Hồi quy đơn biến (`Quantity`):** $MAE = 261,03$ USD, $RMSE = 591,28$ USD, $R^2 = 0,0473$.
     - **Hồi quy đa biến (Pipeline OLS):** $MAE = 216,54$ USD (giảm 56,72 USD sai số so với mốc, tương đương giảm ~20,8%), $RMSE = 502,05$ USD, $R^2 = 0,3131$ (giải thích 31,31% phương sai).
-    - **Mở rộng Log-Sales (kiểm tra ngoại lai):** Mô hình với $\ln(1+Sales)$ cho $R^2_{\log} = 0,5701$, hạ sai số $MAE$ trên USD gốc xuống $165,31$ USD.
+    - **Mở rộng Log-Sales (kiểm tra ngoại lai):** Mô hình với $\ln(1+Sales)$ cho $R^2_{\log} = 0,5701$, hạ $MAE$ trên USD gốc xuống $165,31$ USD nhưng $RMSE$ tăng từ $502,05$ lên $520,44$ USD; R² trong không gian log không so sánh trực tiếp với R² trên USD.
   - **Yếu tố liên hệ rõ nhất:** Nhóm thiết bị kỹ thuật cao `Copiers` ($\beta \approx +2.035,40$ USD) và `Machines` ($\beta \approx +1.392,03$ USD) có liên hệ mạnh nhất tới doanh thu; `Discount` có liên hệ âm ($\beta \approx -303,48$ USD); `Quantity` có liên hệ dương ($\beta \approx +57,47$ USD/đơn vị). Vùng địa lý và phân khúc khách hàng có mức độ liên hệ rất thấp ($|\beta| < 50$ USD).
-  - **Kết luận câu hỏi 5:** Mô hình đa biến ước lượng kết quả bán hàng vượt trội hơn rõ rệt so với mô hình mốc dự đoán trung bình. Độ phù hợp $R^2 \approx 31,31\%$ phản ánh đúng bản chất dữ liệu bán lẻ thiếu thông tin giá niêm yết đơn vị (`Unit Price`); mô hình phù hợp để phân tích xu hướng và tương quan, không dùng để dự báo cá thể.
+  - **Kết luận câu hỏi 5:** Mô hình đa biến ước lượng kết quả bán hàng vượt trội hơn rõ rệt so với mô hình mốc dự đoán trung bình. Mô hình giải thích khoảng 31,31% phương sai trên tập kiểm tra; thiếu giá niêm yết (`Unit Price`) là một giới hạn, chưa phải nguyên nhân đã được xác minh của toàn bộ sai số; mô hình phù hợp để phân tích xu hướng và tương quan, không dùng để dự báo cá thể.
 - **KPI:** 11 measure; **66/66 kết quả DAX trên Power BI Desktop khớp phép tính độc lập trong 6 ngữ cảnh**. Toàn bộ: doanh thu **2.296.919,49 USD**, lợi nhuận **286.409,08 USD**, **5.009 đơn**, biên lợi nhuận **12,47%**, AOV **458,56 USD**. Xem [`kpi_dax_notes.md`](docs/kpi_dax_notes.md) và [`kpi_validation.csv`](docs/kpi_validation.csv).
-- **Dashboard:** đã có [project Power BI](pbix/RetailSales.pbip) gồm 3 trang cho câu hỏi 1–4, Calendar và nguồn CSV sạch; Refresh đã chạy trên Desktop. **Còn xuất PBIX, kiểm tra hiển thị cuối, ảnh chụp và kiểm tra thông điệp với thành viên khác**, chưa hoàn thành toàn bộ DoD. Cách mở và xuất ở [`pbix/README.md`](pbix/README.md).
+- **Dashboard:** đã có [project Power BI](pbix/RetailSales.pbip) gồm 3 trang cho câu hỏi 1–4, Calendar và nguồn CSV sạch; Refresh đã chạy trên Desktop. Đã xuất [RetailSales.pbix](pbix/RetailSales.pbix), mở lại và Refresh bằng TOM, đối chiếu 66/66 KPI trên engine của PBIX; đã xem cả 3 trang, thử chọn/bỏ năm 2017 và chụp [ảnh bằng chứng](screenshots/). Còn bài kiểm tra thông điệp 10 giây với thành viên khác để hoàn tất DoD. Cách mở và xuất ở [`pbix/README.md`](pbix/README.md).
 
 ### Tóm tắt quyết định làm sạch
 
@@ -87,7 +87,11 @@ Xem [`assumptions_limitations.md`](docs/assumptions_limitations.md) và [`privac
 |---|---|---|
 | Claude Code | Gợi ý dataset, tạo khung thư mục và file mẫu | Xem các gợi ý đã được chuyển thành phần Data Cleaning và EDA trong notebook 01 |
 | Cursor (AI Agent) | Hỗ trợ viết code Data Cleaning (D1–D8) và EDA (D9–D14), sinh notebook, kiểm chứng số liệu bằng script độc lập | Mọi con số trong báo cáo đều được **in ra từ dữ liệu** trong notebook; các điểm nghi ngờ (ví dụ ngưỡng giảm giá) đã được **kiểm chứng lại** bằng script độc lập trước khi ghi vào tài liệu |
-| Codex | Hỗ trợ tạo project Power BI, Power Query, 11 DAX measure, bố cục 3 trang và tài liệu KPI | Đã Refresh bằng Power BI Desktop; đối chiếu 66 kết quả DAX thật với phép tính CSV dùng Decimal, tất cả PASS; phần xem cuối và ảnh chụp còn chờ |
+| Codex | Hỗ trợ tạo project Power BI, Power Query, 11 DAX measure, bố cục 3 trang, tài liệu KPI; rà soát và sửa diễn giải hồi quy | Đã Refresh bằng Power BI Desktop; đối chiếu 66 kết quả DAX thật với phép tính CSV dùng Decimal, tất cả PASS; chạy lại hai notebook trên bản sao, đối chiếu hệ số, nhóm tham chiếu và chỉ số đánh giá; đã kiểm tra 3 trang/slicer, xuất và mở lại PBIX, Refresh và kiểm chứng DAX trên engine thật, lưu ảnh bằng computer use |
+
+## Kiểm chứng cuối
+
+Xem [biên bản QA](docs/final_qa.md), [ảnh Power BI](screenshots/), [bằng chứng EDA](milestones/eda/). Các xác nhận của thành viên khác chưa được tự đánh dấu hoàn tất.
 
 ## Cấu trúc thư mục
 

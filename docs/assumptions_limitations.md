@@ -175,11 +175,11 @@ Dựa trên thực nghiệm kiểm chứng tại notebook `notebook/02_linear_re
 | # | Giới hạn đã kiểm chứng | Giải pháp & Kết quả thực tế |
 |---|---|---|
 | M1 | **Một đơn hàng có nhiều dòng** → các dòng trong cùng đơn không độc lập nhau. Chia ngẫu nhiên theo dòng làm rò rỉ dữ liệu. | Đã áp dụng `GroupShuffleSplit` theo `Order ID` (80% train – 20% test, `random_state=42`). 1.002 đơn hàng tập Test hoàn toàn không trùng lặp với tập Train (0% rò rỉ dữ liệu). |
-| M2 | **`Sales` lệch phải mạnh** (L12) & giá trị ngoại lai lớn. | Đã đối chiếu giữa mô hình OLS gốc ($R^2 = 0,3131$, $MAE = 216,54$ USD, $RMSE = 502,05$ USD) và mô hình biến đổi log $\ln(1+Sales)$ ($R^2_{\log} = 0,5701$, $MAE = 165,31$ USD). Báo cáo cả hai đơn vị tiền thật và chỉ số trong không gian log. |
+| M2 | **`Sales` lệch phải mạnh** (L12) & giá trị ngoại lai lớn. | Đã đối chiếu giữa mô hình OLS gốc ($R^2 = 0,3131$, $MAE = 216,54$ USD, $RMSE = 502,05$ USD) và mô hình biến đổi log $\ln(1+Sales)$ ($R^2_{\log} = 0,5701$, $MAE = 165,31$ USD, $RMSE = 520,44$ USD). Log giảm MAE nhưng tăng RMSE; không so sánh trực tiếp R² ở hai không gian khác nhau. |
 | M3 | **Loại trừ biến rò rỉ và biến định danh**: `Row ID`, `Order ID`, `Customer ID`, `Customer Name`, `Product ID`, `Product Name`, `Profit`. | Toàn bộ biến định danh và biến kết quả bị loại bỏ khỏi $X$. Thời gian được tách thành `Order_Year` và `Order_Month`. |
 | M4 | **Mô hình mốc (DummyRegressor)** bắt buộc để so sánh. | Mô hình mốc dự đoán trung bình tập train ($227,67$ USD) cho $R^2 = -0,0003$, $MAE = 273,26$ USD. Mô hình hồi quy đa biến tốt hơn rõ rệt (giảm 56,72 USD sai số MAE, tương đương giảm ~20,8% sai số). |
 | M5 | **Vi phạm tính đồng phương sai (Heteroscedasticity)**. | Biểu đồ phần dư cho thấy dạng hình phễu mở rộng (fan shape) ở các đơn hàng lớn. Sai số ước lượng tăng khi doanh thu thực tế tăng. |
-| M6 | **$R^2 = 31,31\%$ ở mức phù hợp vừa phải**. | Khoảng 68,7% phương sai chưa giải thích được do thiếu thông tin giá niêm yết đơn vị (`Unit Price`) của từng sản phẩm cụ thể. Nhóm ghi nhận trung thực số liệu, không cherry-pick seed. |
+| M6 | **$R^2 = 31,31\%$ ở mức phù hợp vừa phải**. | Khoảng 68,7% phương sai trên tập kiểm tra chưa được mô hình giải thích. Thiếu giá niêm yết đơn vị (`Unit Price`), quan hệ phi tuyến và biến chưa quan sát là các khả năng; chưa định lượng được đóng góp của từng nguyên nhân. Nhóm ghi nhận trung thực số liệu, không cherry-pick seed. |
 | M7 | **Không suy diễn nhân quả từ hệ số hồi quy**. | Các hệ số như `Sub-Category_Copiers` ($\approx +2.035,40$ USD), `Discount` ($\approx -303,48$ USD), `Quantity` ($\approx +57,47$ USD) chỉ phản ánh **mối liên hệ quan sát** trong dữ liệu quá khứ 2014–2017. |
 
 ---

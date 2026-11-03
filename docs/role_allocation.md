@@ -6,9 +6,13 @@ Vai trò theo đề (được phép chồng lấn): Project lead / problem frami
 |---|---|---|---|:---:|
 | **Hưng** | Data preparation lead & EDA lead | Làm sạch dữ liệu (D1–D8), Thống kê mô tả & Khám phá dữ liệu EDA (D9–D14), trả lời Q1–Q4 | `notebooks/01_data_cleaning_eda.ipynb`, `data_cleaned/superstore_clean.csv`, `docs/data_dictionary.md`, `reports/eda_insights.md`, `Hung_dhv.md` | **Hoàn thành** |
 | **Hiếu** | Machine Learning / Regression lead | Xây dựng mô hình hồi quy tuyến tính (M1–M10), kiểm định giả định & phần dư, trả lời Q5 | `notebook/02_linear_regression.ipynb`, `Hieu_dhv.md`, `docs/assumptions_limitations.md` (mục 5) | **Hoàn thành** |
-| **Hoàng** | BI dashboard lead & Project lead | Xây dựng mô hình dữ liệu Power BI, DAX measure, thiết kế dashboard 3 trang, tài liệu KPI | `pbix/RetailSales.pbip`, `docs/kpi_dax_notes.md`, `docs/kpi_validation.csv`, `screenshots/` | **Đang thực hiện** |
+| **Hoàng** | BI dashboard lead & Project lead | Xây dựng mô hình dữ liệu Power BI, DAX measure, thiết kế dashboard 3 trang, tài liệu KPI | `pbix/RetailSales.pbip`, `pbix/RetailSales.pbix`, `docs/kpi_dax_notes.md`, `docs/kpi_validation.csv`, `screenshots/` | **Hoàn thành kỹ thuật; chờ xác nhận nhóm** |
 
 ---
+
+## Xác nhận chung còn lại
+
+Notebook và dữ liệu đã chạy lại độc lập bằng lệnh trên cùng máy; chưa có xác nhận chạy trên máy thành viên khác hoặc xác nhận nhận bàn giao. Nhóm cần làm bài kiểm tra thông điệp dashboard trong 10 giây, tập thuyết trình 8–10 phút và đối chiếu khai báo AI của từng thành viên. Chi tiết kiểm chứng kỹ thuật: [final_qa.md](final_qa.md).
 
 ## Bảng theo dõi tiến độ công việc của Hiếu (M1 – M10)
 

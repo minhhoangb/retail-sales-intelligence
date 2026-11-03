@@ -117,11 +117,15 @@ Thư mục bổ sung: `reports/eda_insights.md` (tóm tắt insight dạng văn 
 | P6.1 | Restart & Run All từ kernel sạch | notebook 01 | Xoá output, chạy lại toàn bộ bằng `nbconvert --execute --inplace` | Chạy không lỗi | **0 lỗi, 11 ảnh PNG, 102 cell** — đã chạy thật | P5.4 | **Completed** |
 | P6.2 | Kiểm tra file bàn giao từ máy khác | `data_cleaned/superstore_clean.csv` | Member khác đọc bằng `encoding="utf-8-sig"` | Đọc được, shape đúng | Đọc không lỗi encoding | P6.1 | **Pending** |
 | P6.3 | Cập nhật README | `README.md` | Điền mục "Kết quả – EDA", link tới notebook/docs, bỏ TODO liên quan | README phản ánh thực tế | Không còn TODO ở phần EDA | P6.1 | **Completed** |
-| P6.4 | Cập nhật phân công | `docs/role_allocation.md` | Ghi rõ vai trò Hưng / Hiếu / Hoàng | Bảng không còn TODO | Khớp `Hung_dhv.md` | P6.3 | **Pending** |
+| P6.4 | Cập nhật phân công | `docs/role_allocation.md` | Ghi rõ vai trò Hưng / Hiếu / Hoàng | Bảng không còn TODO | Đã có đủ 3 thành viên, vai trò và đầu ra trong role_allocation.md | P6.3 | **Completed** |
 | P6.5 | Bàn giao cho Hiếu & Hoàng | thông báo nhóm + commit | Nêu rõ: 9.993 dòng, 21 cột, thay đổi duy nhất so với gốc, tên khách hàng đã ẩn danh | Nhóm nhận thông tin | Nhóm xác nhận đã đọc | P6.2–P6.4 | **Pending** |
-| P6.6 | Milestone 2 | `milestones/` | Lưu bằng chứng (ảnh biểu đồ, log chạy) nếu giảng viên yêu cầu | Bằng chứng milestone | Có ≥4 biểu đồ | P6.1 | **Pending** |
+| P6.6 | Milestone 2 | `milestones/eda/`, `milestones/validation.txt` | Trích 4 biểu đồ từ output notebook 01 đã chạy thật và lưu kết quả kiểm chứng | Bằng chứng milestone | 4 PNG từ notebook thực thi, dữ liệu sạch sinh lại cùng SHA-256 | P6.1 | **Completed** |
 
 ---
+
+## Cập nhật kiểm chứng ngày 03/11/2026
+
+Hai notebook đã chạy lại bằng kernel Jupyter sạch trên bản sao: 65 + 9 cell code, 0 lỗi; CSV sinh lại cùng SHA-256. Dashboard đã xuất PBIX, mở lại, Refresh bằng TOM và đạt 66/66 KPI trên engine riêng. Xem docs/final_qa.md. P3.7/P6.2 vẫn Pending vì chưa xác nhận chạy trên máy thành viên khác; P6.5 vẫn Pending vì chưa có xác nhận nhận bàn giao. Các mục rủi ro bên dưới là ghi chép từ thời điểm lập kế hoạch.
 
 ## 2. Rủi ro cần xử lý trước khi triển khai
 
