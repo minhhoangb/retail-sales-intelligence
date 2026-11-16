@@ -4,8 +4,8 @@ Vai trò theo đề (được phép chồng lấn): Project lead / problem frami
 
 | Thành viên | Vai trò | Việc phụ trách | Sản phẩm bàn giao | Trạng thái |
 |---|---|---|---|:---:|
-| **Hưng** | Data preparation lead & EDA lead | Làm sạch dữ liệu (D1–D8), Thống kê mô tả & Khám phá dữ liệu EDA (D9–D14), trả lời Q1–Q4 | `notebooks/01_data_cleaning_eda.ipynb`, `data_cleaned/superstore_clean.csv`, `docs/data_dictionary.md`, `reports/eda_insights.md`, `Hung_dhv.md` | **Hoàn thành** |
-| **Hiếu** | Machine Learning / Regression lead | Xây dựng mô hình hồi quy tuyến tính (M1–M10), kiểm định giả định & phần dư, trả lời Q5 | `notebook/02_linear_regression.ipynb`, `Hieu_dhv.md`, `docs/assumptions_limitations.md` (mục 5) | **Hoàn thành** |
+| **Hưng** | Data preparation lead & EDA lead | Làm sạch dữ liệu (D1–D8), Thống kê mô tả & Khám phá dữ liệu EDA (D9–D14), trả lời Q1–Q4 | `notebooks/01_data_cleaning_eda.ipynb`, `data_cleaned/superstore_clean.csv`, `docs/data_dictionary.md`, `reports/eda_insights.md` | **Hoàn thành** |
+| **Hiếu** | Machine Learning / Regression lead | Xây dựng mô hình hồi quy tuyến tính (M1–M10), kiểm định giả định & phần dư, trả lời Q5 | `notebooks/02_linear_regression.ipynb`, `docs/assumptions_limitations.md` (mục 5) | **Hoàn thành** |
 | **Hoàng** | BI dashboard lead & Project lead | Xây dựng mô hình dữ liệu Power BI, DAX measure, thiết kế dashboard 3 trang, tài liệu KPI | `pbix/RetailSales.pbip`, `pbix/RetailSales.pbix`, `docs/kpi_dax_notes.md`, `docs/kpi_validation.csv`, `screenshots/` | **Hoàn thành kỹ thuật; chờ xác nhận nhóm** |
 
 ---

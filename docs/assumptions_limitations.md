@@ -170,7 +170,7 @@ Mọi phát hiện trong EDA là **mối liên hệ quan sát**. Ngôn ngữ b�
 
 ## 5. Giới hạn riêng cho phần hồi quy tuyến tính (Hiếu phụ trách)
 
-Dựa trên thực nghiệm kiểm chứng tại notebook `notebook/02_linear_regression.ipynb`:
+Dựa trên thực nghiệm kiểm chứng tại notebook `notebooks/02_linear_regression.ipynb`:
 
 | # | Giới hạn đã kiểm chứng | Giải pháp & Kết quả thực tế |
 |---|---|---|

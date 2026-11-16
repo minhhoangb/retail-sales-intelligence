@@ -18,7 +18,7 @@ Lý do:
 - **Khớp đúng đề tài:** đề yêu cầu `notebooks/01_data_cleaning_eda.ipynb`.
 - **Không tạo notebook trùng lặp:** stub cũ chỉ chứa `TODO`, không có nội dung thực thi được. Giữ lại sẽ gây nhầm lẫn về việc nhóm nào đã làm phần nào.
 - **`README.md` đã trỏ sang `notebooks/`** — nên xoá stub làm cấu trúc nhất quán với tài liệu, không tạo thêm việc phải sửa.
-- **Không đụng vào `notebook/02_linear_regression.ipynb`** (phần của Hiếu) — file này đọc `data_cleaned/superstore_clean.csv` nên hoàn toàn không bị ảnh hưởng.
+- **Không đụng vào `notebooks/02_linear_regression.ipynb`** (phần của Hiếu; trước đây nằm ở `notebook/`) — file này đọc `data_cleaned/superstore_clean.csv` nên hoàn toàn không bị ảnh hưởng.
 
 Thư mục bổ sung: `reports/eda_insights.md` (tóm tắt insight dạng văn bản để đối chiếu với notebook 01) — *xem mục 2.2 bên dưới*.
 
@@ -52,7 +52,7 @@ Thư mục bổ sung: `reports/eda_insights.md` (tóm tắt insight dạng văn 
 | P1.1 | Đọc & kiểm kê cấu trúc repo | — (chỉ đọc) | `Get-ChildItem`, đọc README/docs/notebooks | Bảng hiện trạng (mục 1 ở trên) | Không file nào bị sửa; `git status` sạch (trừ file untracked có sẵn) | — | **Completed** |
 | P1.2 | Profiling dữ liệu gốc, không ghi file | script tạm đã xoá sau khi chạy | pandas read cp1252 | Số liệu kiểm tra ở mục 1 | `git status` không đổi; hash file gốc không đổi | P1.1 | **Completed** |
 | P1.3 | Chốt cấu trúc thư mục đầu ra | `DEVELOPMENT_PLAN.md` | Giữ `notebook/`, thêm `reports/` | Mục 0 + cấu trúc cây | Nhất quán với README | P1.1 | **Completed** |
-| P1.4 | Chốt quy ước bàn giao file sạch | `docs/data_dictionary.md` (mục quy ước) | Văn bản | utf-8-sig, `yyyy-mm-dd`, giữ tên cột | Khớp `Hung_dhv.md` | P1.1 | **Completed** |
+| P1.4 | Chốt quy ước bàn giao file sạch | `docs/data_dictionary.md` (mục quy ước) | Văn bản | utf-8-sig, `yyyy-mm-dd`, giữ tên cột | Khớp quy ước đã chốt với Hiếu và Hoàng | P1.1 | **Completed** |
 
 ---
 
@@ -137,7 +137,7 @@ Hai notebook đã chạy lại bằng kernel Jupyter sạch trên bản sao: 65 
 6. **`Customer Name` là PII.** Quyết định đề xuất: thay **cả hai** cột bằng mã giả ổn định `CUST-001…` (giữ `Customer ID` gốc sẽ cho phép nối ngược về tên thật). Cần nhóm xác nhận trước khi ghi vào `docs/privacy_note.md`, vì điều này ảnh hưởng việc các thành viên khác có còn dùng tên để phân tích hay không.
 7. **Tương thích môi trường.** `requirements.txt` yêu cầu `pandas>=3.0`; máy đang cài pandas 3.0.3 + Python 3.12.10. Thành viên khác có thể đang ở pandas 1.x/2.x — `dtype="str"` và `df.map` khác nhau. Cần kiểm tra lại `requirements.txt` trước khi bàn giao.
 8. **Biểu đồ trong notebook.** ≥4 biểu đồ bắt buộc có tiêu đề, nhãn trục, nhận xét và giải thích lý do chọn loại biểu đồ. Cần cài `matplotlib`/`seaborn` đúng phiên bản, tránh lỗi font tiếng Việt trên Windows.
-9. **Không được đụng vào `notebook/02_linear_regression.ipynb`** (phần của Hiếu) và không sửa `data_raw/`.
+9. **Không được đụng vào `notebooks/02_linear_regression.ipynb`** (phần của Hiếu) và không sửa `data_raw/`.
 
 ---
 

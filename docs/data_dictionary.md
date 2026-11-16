@@ -5,7 +5,7 @@
 **Công cụ tạo:** [`notebooks/01_data_cleaning_eda.ipynb`](../notebooks/01_data_cleaning_eda.ipynb) — mục 4 (kiểm tra) và mục 5 (làm sạch)  
 **Người phụ trách:** Hưng
 
-> **Quy ước bàn giao** (đã chốt với Hiếu và Hoàng trong `Hung_dhv.md`): đường dẫn cố định, bảng mã UTF-8 kèm BOM, ngày dạng `yyyy-mm-dd`, **giữ nguyên tên 21 cột**, không ghi index.
+> **Quy ước bàn giao** (đã chốt với Hiếu và Hoàng): đường dẫn cố định, bảng mã UTF-8 kèm BOM, ngày dạng `yyyy-mm-dd`, **giữ nguyên tên 21 cột**, không ghi index.
 
 ---
 

@@ -35,7 +35,7 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
 | Bước | Sản phẩm | Vị trí |
 |---|---|---|
 | 1. Làm sạch và EDA | Notebook chính, dữ liệu sạch, data dictionary, báo cáo insight | [`01_data_cleaning_eda.ipynb`](notebooks/01_data_cleaning_eda.ipynb) (**D1–D14 xong**), [`data_dictionary.md`](docs/data_dictionary.md), [`eda_insights.md`](reports/eda_insights.md) |
-| 2. Hồi quy tuyến tính | Mô hình, chỉ số đánh giá, diễn giải | [`02_linear_regression.ipynb`](notebook/02_linear_regression.ipynb) (**M1–M10 xong**) |
+| 2. Hồi quy tuyến tính | Mô hình, chỉ số đánh giá, diễn giải | [`02_linear_regression.ipynb`](notebooks/02_linear_regression.ipynb) (**M1–M10 xong**) |
 | 3. Dashboard | File PBIX, ghi chú KPI/DAX, ảnh chụp | `pbix/`, [`kpi_dax_notes.md`](docs/kpi_dax_notes.md), `screenshots/` |
 
 ## Kết quả
@@ -51,7 +51,7 @@ Group project môn DHV301 – Option A: Retail / Sales Intelligence. Quy trình:
   | **Q2** Nhóm sản phẩm | Tốt nhất **`Technology`** (biên LN 17,40%); kém nhất **`Furniture`** — doanh thu chỉ kém 11% nhưng lợi nhuận kém 87%, biên LN **2,49%**, 33,6% dòng lỗ. |
   | **Q3** Khu vực & phân khúc | Khác nhau rõ về **quy mô**, gần như không khác về **AOV** (vùng 426–484 USD; phân khúc 449–472 USD). `Central` biên LN thấp nhất (7,92%); `Home Office` cao nhất (14,05%). |
   | **Q4** Mức giảm giá | **Không** liên hệ với doanh thu (r = −0,028). Liên hệ **phân tầng theo ngưỡng** với lợi nhuận: biên LN +29,51% ở mức 0% → âm từ **30%**; 6 mức 0,32–0,80 có **100% dòng lỗ**. r = −0,219 (R² ≈ 4,8%) — **mối liên hệ quan sát, không phải nhân quả**. |
-- **Hồi quy tuyến tính (M1–M10):** ✅ xong. Notebook [`02_linear_regression.ipynb`](notebook/02_linear_regression.ipynb) chạy hoàn tất **0 lỗi**, gồm biểu đồ thực tế vs dự đoán, biểu đồ phần dư và bảng phân tích hệ số. Chi tiết tại [`Hieu_dhv.md`](Hieu_dhv.md) và [`assumptions_limitations.md`](docs/assumptions_limitations.md) (mục 5).
+- **Hồi quy tuyến tính (M1–M10):** ✅ xong. Notebook [`02_linear_regression.ipynb`](notebooks/02_linear_regression.ipynb) chạy hoàn tất **0 lỗi**, gồm biểu đồ thực tế vs dự đoán, biểu đồ phần dư và bảng phân tích hệ số. Chi tiết tại [`assumptions_limitations.md`](docs/assumptions_limitations.md) (mục 5).
   - **Biến Y:** `Sales` (Doanh thu mặt hàng).
   - **Biến X:** `Quantity`, `Discount`, `Sub-Category`, `Region`, `Segment`, `Ship Mode`, `Order_Year`, `Order_Month` (mã hóa One-Hot trong Pipeline; loại bỏ `Profit`, mã định danh và chuỗi ngày thô).
   - **Chia tập Train/Test:** `GroupShuffleSplit` theo `Order ID` (80:20, `random_state=42`) để chống rò rỉ dữ liệu khi một đơn có nhiều dòng (Train: 4.007 đơn / 7.958 dòng; Test: 1.002 đơn / 2.035 dòng; 0 đơn trùng lặp).
@@ -98,8 +98,7 @@ Xem [biên bản QA](docs/final_qa.md), [ảnh Power BI](screenshots/), [bằng 
 ```text
 data_raw/          Dữ liệu gốc (không chỉnh sửa)
 data_cleaned/      Dữ liệu đã làm sạch dùng cho hồi quy và dashboard
-notebooks/         Notebook làm sạch và EDA (01_data_cleaning_eda.ipynb)
-notebook/          Notebook hồi quy tuyến tính (02_linear_regression.ipynb)
+notebooks/         Notebook làm sạch + EDA (01_data_cleaning_eda.ipynb) và hồi quy tuyến tính (02_linear_regression.ipynb)
 reports/           Báo cáo insight EDA dạng văn bản (eda_insights.md)
 pbix/              File Power BI
 docs/              Data dictionary, KPI, giả định, quyền riêng tư, phân công
@@ -125,7 +124,7 @@ pip install -r requirements.txt
 jupyter notebook notebooks
 ```
 
-Chạy notebook `notebooks/01_data_cleaning_eda.ipynb` trước để tạo dữ liệu sạch (Phần I) và chạy EDA (Phần II), sau đó chạy `notebook/02_linear_regression.ipynb`.
+Chạy notebook `notebooks/01_data_cleaning_eda.ipynb` trước để tạo dữ liệu sạch (Phần I) và chạy EDA (Phần II), sau đó chạy `notebooks/02_linear_regression.ipynb`.
 
 Notebook 01 gồm 11 mục: **1. Introduction → 2. Import Libraries → 3. Load Cleaned Dataset → 4. Data Overview → 5. Descriptive Statistics → 6. Group Comparison → 7. Relationship Analysis → 8. Time Series Analysis → 9. Business Insights → 10. Assumptions and Limitations → 11. Conclusion.** Phần Data Cleaning (D1–D8) nằm ở mục 1.1–1.7 và được giữ nguyên.
 
